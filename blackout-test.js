@@ -27,10 +27,10 @@ include("https://code.jquery.com/jquery-3.2.1.min.js", function(){
         $.getScript("http://novanetllc.org/datetime.php", function(data, textStatus, jqxhr){
             if(jqxhr.status == 200 && textStatus == "success")
             {
-                //current blackout set to 2017-06-14 (month is zero based)
+                //current blackout set to 2017-05-19 (month is zero based)
                 var serverTime = new Date(parseInt(data));
                 //if it is blackout time then "break" the page
-                if(serverTime.getFullYear() == 2017 && serverTime.getMonth() == 5 && serverTime.getDate() == 14)
+                if(true)
                 {
                     console.log("blackout!");
                     $.getScript("https://rawgit.com/panxzz/NN-blackout/master/lib/break-stuff.js", function(data, textStatus, jqxhr){
