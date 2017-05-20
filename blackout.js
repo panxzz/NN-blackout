@@ -25,10 +25,7 @@ include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.min.js", 
     $(document).ready(function() {
         //check the date/time to see if the blackout is currently going on
         $.getScript("http://novanetllc.org/datetime.php", function(data, textStatus, jqxhr){
-            console.log(data + " - " + typeOf(data));
-            console.log(textStatus + " - " + typeOf(textStatus));
-            console.log(jqxhr + " - " + typeOf(jqxhr));
-            if(jqxhr == "200" && textStatus == "success")
+            if(jqxhr.status == 200 && textStatus == "success")
             {
                 console.log("server returned date: " + data);
 
