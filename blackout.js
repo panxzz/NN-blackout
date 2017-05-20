@@ -23,21 +23,32 @@ include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.min.js", 
 
         //check the date/time to see if the blackout is currently going on
         $.getScript("https://rawgit.com/panxzz/NN-blackout/master/lib/check-date.js", function(data, textStatus, jqxhr){
-            console.log(data);
-            console.log(textStatus);
-            console.log(jqxhr.status);
-            console.log("date has been checked.");
+            if(jqxhr == 200 && textStatus == "success")
+            {
+                if(data == "blackout")
+                {
+                    //if it is blackout time then "break" the page
+                    console.log("blackout active");
 
-            //if it is blackout time then "break" the page
-            $.getScript("https://rawgit.com/panxzz/NN-blackout/master/lib/break-stuff.js", function(data, textStatus, jqxhr){
-                console.log(data);
-                console.log(textStatus);
-                console.log(jqxhr.status);
-                console.log("breaking site");
+                    $.getScript("https://rawgit.com/panxzz/NN-blackout/master/lib/break-stuff.js", function(data, textStatus, jqxhr){
+                        console.log(data);
+                        console.log(textStatus);
+                        console.log(jqxhr.status);
+                        console.log("breaking site");
 
-                //after 10 seconds or any click on the page pop the modal
-                window.setTimeout(popModal, 10000);
-            });
+                        //after 10 seconds or any click on the page pop the modal
+                        window.setTimeout(popModal, 10000);
+                    });
+                }
+                else
+                {
+                    console.log("don't blackout!");
+                }
+            }
+            else
+            {
+                console.log("not 200 status or unsucessful query for blackout");
+            }
 
             var popModal = function(){
                 $.getScript("https://rawgit.com/panxzz/NN-blackout/master/lib/modal-display.js", function(data, textStatus, jqxhr){
