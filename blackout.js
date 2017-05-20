@@ -17,20 +17,17 @@ function include(filename, onload) {        //thanks http://stackoverflow.com/a/
     head.appendChild(script);
 }
 
-function typeOf (obj) {
-  return {}.toString.call(obj).split(' ')[1].slice(0, -1).toLowerCase();
-}
 
 include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.min.js", function(){
     $(document).ready(function() {
         //check the date/time to see if the blackout is currently going on
         $.getScript("http://novanetllc.org/datetime.php", function(data, textStatus, jqxhr){
-            console.log(typeOf(jqxhr.status));
-            if(jqxhr.status == "200" && textStatus == "success")
+            if(jqxhr.status == 200 && textStatus == "success")
             {
-                console.log("server returned date: " + data);
+                var serverTime = new Date(data);
+                var blackoutActive = serverTime.getFullYear() == 2017 && serverTime.getUTCMonth() == 5 && serverTime.getUTCDate() == 19;
 
-                if(data == "blackout")
+                if(blackoutActive)
                 {
                     //if it is blackout time then "break" the page
                     console.log("blackout active");
