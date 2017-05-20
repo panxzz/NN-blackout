@@ -17,7 +17,7 @@ function include(filename, onload) {        //thanks http://stackoverflow.com/a/
     head.appendChild(script);
 }
 
-include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.slim.min.js", function(){
+include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.min.js", function(){
     $(document).ready(function() {
         console.log("jquery loaded");
 
