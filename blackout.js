@@ -17,5 +17,5 @@ $.getScript('/lib/check-date.js', function(){
         $.getScript('/lib/modal-display.js', function(){
             //modal is displayed
         });
-    };
-}
+    }
+});
