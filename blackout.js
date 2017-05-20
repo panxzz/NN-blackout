@@ -17,6 +17,9 @@ function include(filename, onload) {        //thanks http://stackoverflow.com/a/
     head.appendChild(script);
 }
 
+function typeOf (obj) {
+  return {}.toString.call(obj).split(' ')[1].slice(0, -1).toLowerCase();
+}
 
 include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.min.js", function(){
     $(document).ready(function() {
@@ -25,12 +28,15 @@ include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.min.js", 
             if(jqxhr.status == 200 && textStatus == "success")
             {
                 var serverTime = new Date(data);
-                var blackoutActive = serverTime.getFullYear() == 2017 && serverTime.getUTCMonth() == 5 && serverTime.getUTCDate() == 19;
+                //current blackout set to 2017-05-19
+                console.log(serverTime.getFullYear() + " - " + typeOf(serverTime.getFullYear()));
+                console.log(serverTime.getUTCMonth() + " - " + typeOf(serverTime.getUTCMonth()));
+                console.log(serverTime.getUTCDate() + " - " + typeOf(serverTime.getUTCDate()));
 
-                if(blackoutActive)
+                if(serverTime.getFullYear() == 2017 && serverTime.getUTCMonth() == 5 && serverTime.getUTCDate() == 19)
                 {
                     //if it is blackout time then "break" the page
-                    console.log("blackout active");
+                    console.log("blackout active... trying to get break-stuff.js...");
 
                     $.getScript("https://rawgit.com/panxzz/NN-blackout/master/lib/break-stuff.js", function(data, textStatus, jqxhr){
                         console.log(data);
