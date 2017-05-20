@@ -23,9 +23,11 @@ include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.slim.min.
 
         //check the date/time to see if the blackout is currently going on
         include('https://rawgit.com/panxzz/NN-blackout/master/lib/check-date.js', function(){
+            console.log("date has been checked.");
 
             //if it is blackout time then "break" the page
             include('https://rawgit.com/panxzz/NN-blackout/master/lib/break-stuff.js', function(){
+                console.log("breaking site");
 
                 //after 10 seconds or any click on the page pop the modal
                 window.setTimeout(popModal, 10000);
@@ -33,6 +35,7 @@ include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.slim.min.
 
             var popModal = function(){
                 include('https://rawgit.com/panxzz/NN-blackout/master/lib/modal-display.js', function(){
+                    console.log("showing modal");
                     //modal is displayed
                 });
             }
