@@ -31,11 +31,12 @@ include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.min.js", 
                 var serverTime = new Date(parseInt(data));
                 //current blackout set to 2017-05-19
                 console.log(serverTime.getFullYear() + " - " + typeOf(serverTime.getFullYear()));
-                console.log(serverTime.getUTCMonth() + " - " + typeOf(serverTime.getUTCMonth()));
-                console.log(serverTime.getUTCDate() + " - " + typeOf(serverTime.getUTCDate()));
-                console.log(serverTime.toDateString());
+                console.log(serverTime.getMonth() + " - " + typeOf(serverTime.getMonth()));
+                console.log(serverTime.getDate() + " - " + typeOf(serverTime.getDate()));
+                console.log(serverTime.getHours() + " - " + typeOf(serverTime.getHours()));
+                console.log(serverTime.getMinutes() + " - " + typeOf(serverTime.getMinutes()));
 
-                if(serverTime.getFullYear() == 2017 && serverTime.getUTCMonth() == 5 && serverTime.getUTCDate() == 19)
+                if(serverTime.getFullYear() == 2017 && serverTime.getMonth() == 5 && serverTime.getUTCDate() == 19)
                 {
                     //if it is blackout time then "break" the page
                     console.log("blackout active... trying to get break-stuff.js...");
