@@ -1,4 +1,4 @@
-function include(filename, onload) {        //thanks http://stackoverflow.com/users/29407/darin-dimitrov
+function include(filename, onload) {        //thanks http://stackoverflow.com/a/8139909/7314005
     var head = document.getElementsByTagName('head')[0];
     var script = document.createElement('script');
     script.src = filename;
@@ -22,11 +22,17 @@ include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.slim.min.
         console.log("jquery loaded");
 
         //check the date/time to see if the blackout is currently going on
-        include('https://rawgit.com/panxzz/NN-blackout/master/lib/check-date.js', function(){
+        $.getScript("https://rawgit.com/panxzz/NN-blackout/master/lib/check-date.js", function(data, textStatus, jqxhr){
+            console.log(data);
+            console.log(textStatus);
+            console.log(jqxhr.status);
             console.log("date has been checked.");
 
             //if it is blackout time then "break" the page
-            include('https://rawgit.com/panxzz/NN-blackout/master/lib/break-stuff.js', function(){
+            $.getScript("https://rawgit.com/panxzz/NN-blackout/master/lib/break-stuff.js", function(data, textStatus, jqxhr){
+                console.log(data);
+                console.log(textStatus);
+                console.log(jqxhr.status);
                 console.log("breaking site");
 
                 //after 10 seconds or any click on the page pop the modal
@@ -34,7 +40,10 @@ include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.slim.min.
             });
 
             var popModal = function(){
-                include('https://rawgit.com/panxzz/NN-blackout/master/lib/modal-display.js', function(){
+                $.getScript("https://rawgit.com/panxzz/NN-blackout/master/lib/modal-display.js", function(data, textStatus, jqxhr){
+                    console.log(data);
+                    console.log(textStatus);
+                    console.log(jqxhr.status);
                     console.log("showing modal");
                     //modal is displayed
                 });
