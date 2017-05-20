@@ -17,7 +17,7 @@ function include(filename, onload) {        //thanks http://stackoverflow.com/a/
     head.appendChild(script);
 }
 
-function typeOf (obj) {
+function typeOf (obj) {     //thanks http://stackoverflow.com/a/28475765/7314005
   return {}.toString.call(obj).split(' ')[1].slice(0, -1).toLowerCase();
 }
 
@@ -27,7 +27,8 @@ include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.min.js", 
         $.getScript("http://novanetllc.org/datetime.php", function(data, textStatus, jqxhr){
             if(jqxhr.status == 200 && textStatus == "success")
             {
-                var serverTime = new Date(data);
+                console.log(data);
+                var serverTime = new Date(parseInt(data));
                 //current blackout set to 2017-05-19
                 console.log(serverTime.getFullYear() + " - " + typeOf(serverTime.getFullYear()));
                 console.log(serverTime.getUTCMonth() + " - " + typeOf(serverTime.getUTCMonth()));
