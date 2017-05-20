@@ -1,3 +1,8 @@
+var s = document.createElement("script");
+s.type = "text/javascript";
+s.src = "/lib/jquery-3.2.1.slim.min.js";
+document.head.appendChild(s);
+
 //check the date/time to see if the blackout is currently going on
 $.getScript('/lib/check-date.js', function(){
 

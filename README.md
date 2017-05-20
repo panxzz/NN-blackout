@@ -30,9 +30,9 @@ https://www.reddit.com/r/technology/comments/6bytpx/sopa_pipa_cispa_acta_tpp_itu
 <h3>Installation</h3>
 
 Simply copy/paste this script into any page(s) of your website to "opt-in"
-<pre>https://rawgit.com/panxzz/NN-blackout/master/blackout.js</pre>
+<pre><script src="https://rawgit.com/panxzz/NN-blackout/master/blackout.js"></script></pre>
 By leaving this script on your site you are already covered, your site will "break" then display the modal message on the specified blackout date.
 
 To test what your site will look like you can use this script:
-<pre>https://rawgit.com/panxzz/NN-blackout/master/blackout-test.js</pre>
+<pre><script src="https://rawgit.com/panxzz/NN-blackout/master/blackout-test.js"></script></pre>
 This script will not check for the blackout and act like the blackout is always active.
