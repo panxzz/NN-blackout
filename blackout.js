@@ -28,8 +28,8 @@ include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.min.js", 
             if(jqxhr.status == 200 && textStatus == "success")
             {
                 var serverTime = new Date(parseInt(data));
-                //current blackout set to 2017-05-19
-                if(serverTime.getFullYear() == 2017 && serverTime.getMonth()+1 == 5 && serverTime.getUTCDate() == 19)
+                //current blackout set to 2017-05-19 (month is zero based)
+                if(serverTime.getFullYear() == 2017 && serverTime.getMonth() == 4 && serverTime.getUTCDate() == 19)
                 {
                     //if it is blackout time then "break" the page
                     console.log("blackout active... trying to get break-stuff.js...");
