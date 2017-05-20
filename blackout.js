@@ -32,6 +32,7 @@ include("https://rawgit.com/panxzz/NN-blackout/master/lib/jquery-3.2.1.min.js", 
                 console.log(serverTime.getFullYear() + " - " + typeOf(serverTime.getFullYear()));
                 console.log(serverTime.getUTCMonth() + " - " + typeOf(serverTime.getUTCMonth()));
                 console.log(serverTime.getUTCDate() + " - " + typeOf(serverTime.getUTCDate()));
+                console.log(serverTime.toDateString());
 
                 if(serverTime.getFullYear() == 2017 && serverTime.getUTCMonth() == 5 && serverTime.getUTCDate() == 19)
                 {
