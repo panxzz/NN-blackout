@@ -39,7 +39,7 @@ include("https://code.jquery.com/jquery-3.2.1.min.js", function(){
                             console.log("breaking stuff");
                         }
                         //after 10 seconds or any click on the page pop the modal
-                        window.setTimeout(popModal, 10000);
+                        window.setTimeout(popModal, 1000); //change back to 10 seconds
                     });
                 }
                 else
@@ -49,10 +49,17 @@ include("https://code.jquery.com/jquery-3.2.1.min.js", function(){
             }
 
             var popModal = function(){
-                $.getScript("https://rawgit.com/panxzz/NN-blackout/master/lib/modal-display.js", function(data, textStatus, jqxhr){
+                //local dev change back to cloud fetch $.getScript("https://rawgit.com/panxzz/NN-blackout/master/lib/modal-display.js", function(data, textStatus, jqxhr){
+                $.getScript("lib/modal-display.js", function(data, textStatus, jqxhr){
+
                     if(jqxhr.status == 200 && textStatus == "success")
                     {
                         console.log("showing modal");
+                        console.log(data);
+                        console.log(textStatus);
+                        console.log(jqxhr);
+
+                        displayMessage();
                     }
                 });
             }
