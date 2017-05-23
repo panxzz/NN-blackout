@@ -53,6 +53,7 @@ include("https://code.jquery.com/jquery-3.2.1.min.js", function(){
                     if(jqxhr.status == 200 && textStatus == "success")
                     {
                         console.log("showing modal");
+                        displayMessage(); //function from modal-display.js that displays a popup with the NN message
                     }
                 });
             }
