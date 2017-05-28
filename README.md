@@ -23,3 +23,6 @@ By leaving this script on your site you are already covered, your site will "bre
 To test what your site will look like you can use this script:
 <pre><script src="https://rawgit.com/panxzz/NN-blackout/master/blackout-test.js"></script></pre>
 This script will not check for the blackout and act like the blackout is always active.
+
+<h3>Live Demo</h3>
+You can see a live demonstration of the script working at <a href="http://novanetllc.org/example/">http://novanetllc.org/example/</a>
