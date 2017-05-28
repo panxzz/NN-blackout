@@ -39,11 +39,9 @@ include("https://code.jquery.com/jquery-3.2.1.min.js", function(){
                 //if it is blackout time then "break" the page
                 if(true)
                 {
-                    console.log("blackout!");
                     $.getScript(breakStuffPath, function(data, textStatus, jqxhr){
                         if(jqxhr.status == 200 && textStatus == "success")
                         {
-                            console.log("breaking stuff");
                             breakStuff();
                         }
                         //after 10 seconds or any click on the page pop the modal
@@ -52,7 +50,7 @@ include("https://code.jquery.com/jquery-3.2.1.min.js", function(){
                 }
                 else
                 {
-                    console.log("don't blackout!");
+                    //console.log("don't blackout!");
                 }
             }
 
@@ -60,7 +58,6 @@ include("https://code.jquery.com/jquery-3.2.1.min.js", function(){
                 $.getScript(displayModalPath, function(data, textStatus, jqxhr){
                     if(jqxhr.status == 200 && textStatus == "success")
                     {
-                        console.log("showing modal");
                         displayMessage(); //function from modal-display.js that displays a popup with the NN message
                     }
                 });
