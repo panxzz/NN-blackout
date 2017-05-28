@@ -25,8 +25,8 @@ function typeOf (obj) {     //thanks http://stackoverflow.com/a/28475765/7314005
 var breakStuffPath = "https://rawgit.com/panxzz/NN-blackout/master/lib/break-stuff.js";
 var displayModalPath = "https://rawgit.com/panxzz/NN-blackout/master/lib/modal-display.js";
 // DEVELOPMENT PATHS
-//breakStuffPath = "/lib/break-stuff.js";
-//displayModalPath = "/lib/modal-display.js";
+breakStuffPath = "/lib/break-stuff.js";
+displayModalPath = "/lib/modal-display.js";
 
 include("https://code.jquery.com/jquery-3.2.1.min.js", function(){
     $(document).ready(function() {
@@ -44,6 +44,7 @@ include("https://code.jquery.com/jquery-3.2.1.min.js", function(){
                         if(jqxhr.status == 200 && textStatus == "success")
                         {
                             console.log("breaking stuff");
+                            breakStuff();
                         }
                         //after 10 seconds or any click on the page pop the modal
                         window.setTimeout(popModal, 10000); 
