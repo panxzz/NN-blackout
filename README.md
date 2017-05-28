@@ -1,7 +1,7 @@
 # NN-blackout
 Purposefully slows loading of webpages to simulate what the internet would look like without Net Neutrality.
 
-This script will only become active on the day of the blackout (if and when it's scheduled) and on that day it will make webpages look like they are loading really slowly and possibly "break" other things; then after a few seconds a modal will pop saying "This is what the internet would look like without net neutrality... Tell the FCC that you support net neutrality".
+This script will only become active on the day of the blackout (if and when it's scheduled) and on that day it will make webpages look like they are loading really slowly and possibly "break" other things; then after a few seconds a modal will pop saying "This is what the internet would look like without net neutrality... Tell the FCC that you support net neutrality". Clicking anywhere on the screen when the modal is shown will close the message and allow normal operation of the site.
 
 The idea is that a ton of individual website owners would be able to just pop this script on their site to "opt-in" to a massive blackout of the web on a specific day. If they ever wanted to "opt-out" (say after we've won the internet back, or if they are concerned that it would go down on important days) they would just need to remove the call to this script.
 
