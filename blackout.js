@@ -35,10 +35,10 @@ include("https://code.jquery.com/jquery-3.2.1.min.js", function(){
         $.getScript("http://novanetllc.org/datetime.php", function(data, textStatus, jqxhr){
             if(jqxhr.status == 200 && textStatus == "success")
             {
-                //current blackout set to 2017-05-19 (month is zero based)
+                //current blackout set to 2017-07-12 (month is zero based)
                 var serverTime = new Date(parseInt(data));
                 //if it is blackout time then "break" the page
-                if(serverTime.getFullYear() == 2017 && serverTime.getMonth() == 5 && serverTime.getDate() == 14)
+                if(serverTime.getFullYear() == 2017 && serverTime.getMonth() == 6 && serverTime.getDate() == 12)
                 {
                     $.getScript(breakStuffPath, function(data, textStatus, jqxhr){
                         if(jqxhr.status == 200 && textStatus == "success")
